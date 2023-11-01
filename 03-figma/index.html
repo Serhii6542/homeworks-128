@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figma</title>
-    <style>
+    <!-- <style>
         img {
             width: 100%;
         }
@@ -19,14 +19,18 @@
             margin: 0 auto;
             border: 2px solid green;
         }
-    </style>
+    </style> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav id="#home">
+    <header class="header">
+        <div class="container ">
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#about-me">About me</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
@@ -36,9 +40,9 @@
     </div>
     </header>
     <main>
-        <section>
-            <div class="container">
-                <h2>Denis Novik</h2>
+        <section class="novik">
+            <div class="container Novik">
+                <h1>Denis Novik</h1>
                 <img src="assets/img/photox940.jpg" alt="Denis Novik">
             </div>
         </section>
@@ -55,8 +59,8 @@
         </div> 
         </section>
 
-        <section>
-            <div class="container">
+        <!-- <section class="skills">
+             <div class="container">
                 <h2 id="skills">Skills</h2>
                 <p>I work in such programs as</p>
                 <br>
@@ -98,28 +102,29 @@
                     <li><img src="assets/img/star-icon.png" alt=""></li>
                 </ul>
             </div>
-        </section>
+        </section> -->
 
         <section>
             <div class="container">
                 <h2 id="portfolio">Portfolio</h2>
-                <img src="assets/img/Fashion-Store.png" alt="">
-                <br>
-                <a href="#Online_fasion_store-Homepage">Online fasion store-Homepage</a>
-                <br>
-                <br>
-                <img src="assets/img/reebok_web.png" alt="">
-                <br>
-                <a href="#Reebok_store-Concept">Reebok store Concept</a>
-                <br>
-                <br>
-                <img src="assets/img/braun-landing.png" alt="">
-                <br>
-                <a href="Braun_Landing_Page-Concepy">Braun Landing Page-Concepy</a>
+                <div class="fashion-store">
+                    <img src="assets/img/Fashion-Store.png" alt="">
+                    <br>
+                    <a href="#Online_fasion_store-Homepage">Online fasion store-Homepage</a>
+                </div>
+                <div class="reebok">
+                    <img src="assets/img/reebok_web.png" alt="">
+                    <br>
+                    <a href="#Reebok_store-Concept">Reebok store Concept</a>
+                </div>
+                <div class="braun">
+                    <img src="assets/img/braun-landing.png" alt="">
+                    <br>
+                    <a href="#Braun_Landing_Page-Concepy">Braun Landing Page-Concepy</a>
+                </div>
             </div>
         </section>
-
-        <footer>
+        <!-- <footer>
             <div class="footer_container">
                 <h2 id="contacts">Contacts</h2>
                 <p>Want to know more or just chat?</p>
@@ -135,7 +140,7 @@
                 <p>Like me on</p>
                 <p>Linkedin, Instagram, Behance, Dribble</p>
             </div>
-        </footer>
+        </footer> -->
     </main>
     
 </body>
