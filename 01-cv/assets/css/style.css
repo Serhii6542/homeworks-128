@@ -1,0 +1,21 @@
+body {
+    background-color: #000000eb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+    list-style: none;
+}
+.container {
+    background-color: #a0a0a0;
+    text-align: center;
+    width: min(50%, 870px);
+    margin: 0 auto;
+    border: 3px solid #1b1515;
+}
+a {
+    color: #000000;
+}
+img {
+    margin: 0 auto;
+    border: 5px solid #000000;
+}
