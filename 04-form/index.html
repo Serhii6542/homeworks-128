@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Forma</title>
+</head>
+<body>
+    <div class="container">
+        <form action="#" target="_blank" method="post">
+            <div class="form-row">
+                <label for="username">Повне ім'я</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-row">
+                <label for="password">Пароль</label>
+                <input type="password" name="password" id="password"  required minlength="4" maxlength="20">
+            </div>
+            <div class="form-row">
+                <label for="password">Пароль ще раз</label>
+                <input type="password" name="password" id="password" required minlength="4" maxlength="20">
+            </div>
+            <div class="form-row">
+                <label for="radio">Стать</label>
+                <input type="radio" name="radio" id="radio" value="man"> Чоловіча
+                <input type="radio" name="radio" id="radio" value="woman"> Жіноча
+            </div>
+            <div class="form-row">
+                <label for="number">Вік</label>
+                <input type="number" name="number" id="number" min="0" max="100" required minlength="1" maxlength="3">
+            </div>
+            <div class="form-row">
+                <label for="list">Курс</label>
+                <select name="list" id="list" required>
+                    <option value="" disabled selected>-=Виберіть курс=-</option>
+                    <option value="Front-End">Front-End розробка</option>
+                    <option value="JavaScript Advanced">JavaScript Advanced</option>
+                    <option value="Python">Python розробка</option>
+                </select>
+            </div>
+            <div class="form-row comment">
+                <label for="comment">Повна адреса</label>
+                <textarea name="comment" id="comment" cols="20" rows="3" placeholder="Країна,регіон,місто/селище,вулиця,будинок" required></textarea>
+            </div>
+            <div class="form-row checkbox">
+                <input type="checkbox" name="checkbox" id="checkbox" required>
+                <label for="checkbox">Я погоджуюсь з обробкою персональних даних</label> 
+            </div>
+            <div class="form-row">
+                <label for="button"></label>
+                <input type="reset" name="reset" id="reset" value="Очистити форму">
+                <input type="button" name="button" id="button" value="Зареєструватися">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
