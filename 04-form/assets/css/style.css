@@ -11,6 +11,9 @@ body {
     width: 100px;
     margin-right: 50px;
 }
+.form-row label.sex {
+    margin-right: 0px;
+}
 .form-row {
     margin-bottom: 15px;
 }
@@ -20,7 +23,7 @@ body {
 .form-row.checkbox {
     margin-bottom: 10px;
 }
-#button {
+#submit {
     margin-left: 15px;
 }
 #reset {
@@ -29,4 +32,7 @@ body {
 .form-row.checkbox label {
     width: 400px;
     font-size: 12px;
+}
+#radio {
+    margin-left: 110px;
 }

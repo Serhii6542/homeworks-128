@@ -54,7 +54,11 @@ h1 {
     font-size: 18px;
 }
 .main-nav ul li a {
+    text-decoration: none;
     color: var(--text)
+}
+.main-nav ul li a:hover {
+    color: #070707;
 }
 .container h2 {
     padding-bottom: 50px;
@@ -128,8 +132,11 @@ ul {
     margin-bottom: 60px;
     padding: 0 30px;
 }
-.skills-list li.last.skill-title {
+.skills-list li.last .skill-title {
     margin-bottom: 80px;
+}
+.last.skill-title {
+    min-height: 38px;
 }
 .skill-rating {
     font-size: 0;
@@ -170,7 +177,7 @@ button {
     color: #FFF;
     background-color: #070707;
     font-family: 'Open Sans';
-    font-family: 18px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 1.8px;
     cursor: pointer;
@@ -193,6 +200,10 @@ button:hover {
 .contacts.logo.img {
     width: 40px;
     aspect-ratio: 1;
+    cursor: pointer;
+}
+.contacts.logo.img:hover {
+    opacity: 0.5;
 }
 .contacts.logo {
     margin-bottom: 60px;

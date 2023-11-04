@@ -19,20 +19,22 @@
             </div>
             <div class="form-row">
                 <label for="password">Пароль</label>
-                <input type="password" name="password" id="password"  required minlength="4" maxlength="20">
+                <input type="password" name="password" id="password">
             </div>
             <div class="form-row">
-                <label for="password">Пароль ще раз</label>
-                <input type="password" name="password" id="password" required minlength="4" maxlength="20">
+                <label for="password-again">Пароль ще раз</label>
+                <input type="password" name="password-again" id="password-again">
             </div>
             <div class="form-row">
-                <label for="radio">Стать</label>
-                <input type="radio" name="radio" id="radio" value="man"> Чоловіча
-                <input type="radio" name="radio" id="radio" value="woman"> Жіноча
+                <span>Стать</span>
+                <input type="radio" name="radio" id="radio" value="man">
+                <label for="radio" class="sex"> Чоловіча</label>
+                <input type="radio" name="radio" id="radio2" value="woman">
+                <label for="radio" class="sex"> Жіноча</label>
             </div>
             <div class="form-row">
                 <label for="number">Вік</label>
-                <input type="number" name="number" id="number" min="0" max="100" required minlength="1" maxlength="3">
+                <input type="number" name="number" id="number" min="0" max="100" required>
             </div>
             <div class="form-row">
                 <label for="list">Курс</label>
@@ -52,9 +54,9 @@
                 <label for="checkbox">Я погоджуюсь з обробкою персональних даних</label> 
             </div>
             <div class="form-row">
-                <label for="button"></label>
+                <label for="submit"></label>
                 <input type="reset" name="reset" id="reset" value="Очистити форму">
-                <input type="button" name="button" id="button" value="Зареєструватися">
+                <input type="submit" name="submit" id="submit" value="Зареєструватися">
             </div>
         </form>
     </div>
