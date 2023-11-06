@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --colors-gray-secondary: #4A4F56;
+    --colors-bg: #3B3F45;
+    --text-headings: #FF8984;
+    --text-checked: #9B96AC;
+    --colors-purple-regular: #88839E;
+    --colors-purple-checked: #7A7593;
+    --colors-purple-dark: #625E77;
+    --text-list: #FFFFFF;
+}
+body {
+    text-align: center;
+    background-color:#3B3F45;
+    font-family: 'Roboto', sans-serif;
+    font-size: 27px;
+    color: #ffffff;
+}
+.header {
+    background-color:#4A4F56;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    margin-bottom: 40px;
+}
+.title {
+    color:#FF8984;
+    margin-bottom: 6px;
+}
+.subtitle {
+    color: #FF8984;
+    font-size: 24px;
+}
+.container {
+    display: inline-block;
+    width: 800px;
+    margin-bottom: 40px;
+
+}
+.container ul {
+    list-style: none;
+    text-align: left;
+}
+.container ul li {
+    padding: 15px;
+}
+.container ul li:nth-child(odd) {
+    background-color: var(--colors-purple-regular);
+}
+.container ul li:nth-child(even) {
+    background-color: var(--colors-purple-dark);
+}
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"] + label {
+   padding-left: 43px;
+   position: relative;
+}
+input[type="checkbox"]+label::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #FFF;
+    background-color: #FFF;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+input[type="checkbox"]:checked+label::before {
+    background-color: #FFF;
+}
+input[type="checkbox"]:checked+label::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 10px;
+    border-left: 4px solid #000;
+    border-bottom: 4px solid #000;
+    rotate: -47deg;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    transition: all .1s ease-in
+}
+li:has(input[type="checkbox"]:checked+label) {
+    text-decoration: line-through;
+    background-color: var(--colors-purple-checked);
+    color: var(--text-checked);
+}
+.container ul li:active {
+    background: var(--text-headings);
+}
+.container ul li:hover {
+    border-bottom: 4px solid #fff;
+    border-top: 4px solid #fff;
+    transition: all .1s ease-in;
+}
+.footer button{
+    display: inline-block;
+    width: 800px;
+    height: 66px;
+    background-color: var(--colors-gray-secondary);
+    padding: 16px 0;
+    color: var(--text-headings);
+    font-size: 28px;
+}
+.footer button:hover {
+    background-color: var(--text-headings);
+    color: var(--colors-gray-secondary);
+    transition: all 0.3s ease;
+}
