@@ -108,6 +108,7 @@ li:has(input[type="checkbox"]:checked+label) {
     padding: 16px 0;
     color: var(--text-headings);
     font-size: 28px;
+    border: none;
 }
 .footer button:hover {
     background-color: var(--text-headings);
