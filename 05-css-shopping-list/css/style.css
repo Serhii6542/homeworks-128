@@ -45,6 +45,8 @@ body {
 }
 .container ul li {
     padding: 15px;
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
 }
 .container ul li:nth-child(odd) {
     background-color: var(--colors-purple-regular);
@@ -95,8 +97,7 @@ li:has(input[type="checkbox"]:checked+label) {
     background: var(--text-headings);
 }
 .container ul li:hover {
-    border-bottom: 4px solid #fff;
-    border-top: 4px solid #fff;
+    border-color: #FFF;
     transition: all .1s ease-in;
 }
 .footer button{
