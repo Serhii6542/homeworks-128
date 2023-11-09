@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body { 
+    min-height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.375rem;
+    font-weight: 400;
+    color: #FFF;
+    background-color: #39C;
+    border: 25px solid #2B81AC;
+}
+.container {
+    width: min(90%, 1170px);
+    margin: 0 auto;
+
+}
+.title {
+    text-align: left;
+    display: inline-block;
+    font-size: 1.3125rem;
+    margin-top: 66.1px;
+    margin-bottom: 37.62px;
+}
+.weather-list {
+    font-size: 0;
+}
+.weather-list ul {
+    width: 100%;
+    border: 2px solid #FFF;
+    display: inline-block;
+    font-size: 0;
+}
+.weather-list li {
+    width: 25%;
+    text-align: center;
+    list-style: none;
+    display: inline-block;
+    font-size: 1.375rem;
+}
+.weather-list li:first-child {
+    width: 50%;
+}
+.weather-list li:last-child {
+    width: 100%;
+    background: #669;
+}
+.weather-list li.wt-50 {
+    width: 50%;
+    background: #C69;
+}
+.weather-list .city.paris {
+    background: #3CC;
+}
+.weather-list .city.belgrade {
+    background: #969;
+}
+.weather-list .city.venice {
+    background: #C24747;
+}
+.weather-list .city.tel-avive {
+    background: #E2674A;
+}
+.weather-list .city.cair {
+    background: #FFCC66;
+}
+.weather-list .city.new-york {
+    background: #99CC99;
+}
+.weather-list .city.new-delhi {
+    background: #669999;
+}
+.weather-list .city.tokyo {
+    background: #339966;
+}
+.weather-list i {
+    padding-left: 15px;
+    font-size: 2.625rem
+}
+.city.lisbon {
+    height: 147px;
+    border: 2px solid #FFF;
+    text-align: center;
+}
+.city {
+    height: 147px;
+    border: 2px solid #FFF;
+}
+span {
+    color: #FFFFFFB2;
+}
+.tem {
+    line-height: 21px;
+}
+.tem .wi {
+    vertical-align: middle;
+}
+.city.sydney {
+    height: 147px
+}
+.weather-list:hover li {
+    opacity: .6;
+}
+.weather-list li:hover {
+    opacity: 1;
+}
+
+.footer-text {
+    margin-top: 37px;
+    font-size: 1rem;
+}
+.city-name {
+    margin-top: 26px;
+    margin-bottom: 19px;
+}
