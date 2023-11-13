@@ -1,0 +1,114 @@
+$sub-text: #898F8F;
+$gold:#FFCC00;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    color: #666;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 121px 135px 122px 135px;
+}
+.container {
+    display: flex;
+    width: 1170px;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 40px;
+}
+.title {
+    h2 {    
+        margin-bottom: 15px;
+        font-size: 1.125rem;
+        font-weight: 500;
+        font-style: normal;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+        color: $sub-text
+    }
+    h1 {
+        font-size: 3.75rem;
+        font-weight: 900;
+        line-height: 4.125rem;
+        text-transform: uppercase;
+        color: $gold;
+        margin-bottom: 40px;
+    }
+}
+.block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 170px;
+    .left .image {
+        width: 400px;
+        height: 400px;
+    }
+    .right {
+        width: 430px;
+        height: 420px;
+        .info-title {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            h2{
+                color: #666;
+                font-size: 2.25rem;
+                font-weight: 900;
+            }
+            p.subtitle {
+                color: #666;
+                font-size: 1.5rem;
+                font-weight: 400;
+                line-height: 2.25rem;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+.social {
+    margin-bottom: 49px;
+    ul {
+        display: inline-flex;
+        flex-direction: row;
+        gap: 5px;
+        list-style: none;
+    }
+}
+.info-text {
+    margin-bottom: 54px;
+    p {
+        color: #333;
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+    } 
+}
+.button button {
+    display: inline-flex;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 0.875rem;
+    border: 1px solid $gold;
+    background-color: #FFF;
+    cursor: pointer;
+    text-transform: uppercase;
+    &:hover {
+        background-color: $gold;
+    }
+    &:active {
+        background-color: orange;
+    }
+}
