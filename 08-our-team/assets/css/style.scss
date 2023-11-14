@@ -25,6 +25,13 @@ main {
     gap: 40px;
 }
 .title {
+    width: min(90%, 450px);
+    margin: 0 auto;
+    border-bottom: 1px solid $gold;
+    img {
+        position: relative;
+        top: 15px;
+    }
     h2 {    
         margin-bottom: 15px;
         font-size: 1.125rem;
@@ -44,13 +51,21 @@ main {
     }
 }
 .block {
+    width: min(90%, 1030px);
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 170px;
-    .left .image {
-        width: 400px;
-        height: 400px;
+    // justify-content: space-between;
+    align-items: center;
+    gap: 85px;
+    .left {
+        width: 430px;
+        height: 430px;
+        padding: 15px;
+    }
+    .center {
+        width: 1px;
+        height: 560px;
+        background-color: $gold;
     }
     .right {
         width: 430px;
@@ -58,7 +73,14 @@ main {
         .info-title {
             display: flex;
             flex-direction: column;
-            gap: 60px;
+            gap: 30px;
+            .divider {
+                width: 100px;
+                height: 1px;
+                background-color: $gold;
+                display: flex;
+                margin-left: 165px;
+            }
             h2{
                 color: #666;
                 font-size: 2.25rem;
@@ -81,16 +103,24 @@ main {
         flex-direction: row;
         gap: 5px;
         list-style: none;
+        
+        li a:hover {
+            border-bottom: 2px solid #5a5858;
+            border-radius: 2px;
+        }
     }
 }
 .info-text {
-    margin-bottom: 54px;
+    margin-bottom: 20px;
     p {
         color: #333;
         font-size: 0.875rem;
         font-weight: 500;
         line-height: 1.5rem;
     } 
+}
+.decore {
+    margin-bottom: 25px;
 }
 .button button {
     display: inline-flex;
