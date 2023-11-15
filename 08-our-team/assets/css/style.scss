@@ -57,10 +57,49 @@ main {
     // justify-content: space-between;
     align-items: center;
     gap: 85px;
+    
     .left {
         width: 430px;
         height: 430px;
-        padding: 15px;
+        position: relative;
+        &::before, &::after {
+            content: '';
+            border-top: 1px solid $gold;
+            position: absolute;
+            top: 0;
+            display: block;
+            width: 100px;
+            height: 100px;
+        }
+        &::before {
+            border-left: 1px solid $gold;
+            left: 0;
+        }
+        &::after {
+            border-right: 1px solid $gold;
+            right: 0;
+        }
+        .image{
+            padding: 15px;
+            &::before, &::after {
+                content: '';
+                border-bottom: 1px solid $gold;
+                position: absolute;
+                bottom: 0;
+                display: block;
+                width: 100px;
+                height: 100px;
+            }
+            &::before {
+                border-left: 1px solid $gold;
+                left: 0;
+            }
+            &::after {
+                border-right: 1px solid $gold;
+                right: 0;
+            }
+        }
+        
     }
     .center {
         width: 1px;
