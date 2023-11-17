@@ -39,43 +39,43 @@ ul {
 .nav ul li a:hover {
     color: orange;
 }
-.sign-up {
+.sign {
     width: 252px;
     display: flex;
     justify-content: space-between;
 }
-.sign-up button {
+.sign button {
     padding: 13px 25px;
     font-size: 1rem;
     font-weight: 600;
 }
-button[type=button].sign-in {
+.sign-in {
     color: #2F281E;
     background-color: #fff;
     border-radius: 4px;
     border: 1px solid #BCD0E5;
     cursor: pointer;
 }
-button[type=button].sign-in:hover {
+.sign-in:hover {
     background-color: #d6d6d6;
     transition: all .2s ease;
 }
-button[type=button].sign-in:active {
+.sign-in:active {
     background-color: #afafaf;
 }
-button[type=button] {
+.sign-up {
     background-color: orange;
     color: #FFF;
     border-radius: 4px;
     border: 1px solid orange;
     cursor: pointer;
 }
-button[type=button]:hover {
+.sign-up:hover {
     background-color: #FFF;
     color: orange;
     transition: all .2s ease;
 }
-button[type=button]:active {
+.sign-up:active {
     background-color: #8b8b8b;
 }
 /* section.superpowers {
@@ -268,7 +268,7 @@ button.start:active {
         font-size: 1rem;
     }
 }
-.btn button[type=submit] {
+.btn button {
     width: 180px;
     padding: 13px 40px;
     background-color: orange;
