@@ -15,16 +15,23 @@ header {
 ul {
     list-style: none;
 }
-.container-nav {
-    width: min(90%, 1200px);
-    margin: 0 auto;
+.superpowers {
+    padding-bottom: 99px;
 }
-.main-nav {
-    margin: 17px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header {
+    .container {
+        width: min(90%, 1200px);
+        margin: 0 auto;
+        .main-nav {
+            margin: 17px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
 }
+
+
 .nav li{
     display: inline-block;
     margin-right: 20px
@@ -81,7 +88,7 @@ ul {
 /* section.superpowers {
     padding: 70px 120px 100px;
 } */
-.container {
+.superpowers .container {
     width: min(90%, 1200px);
     margin: 0 auto;
     display: flex;
@@ -120,7 +127,7 @@ button.start:active {
     background-color: #afafaf;
 }
 // //не получилося
-.container-tools {
+.tools .container {
     padding-bottom: 74px;
 }
 .card {
@@ -129,11 +136,13 @@ button.start:active {
 .subtitle {
     margin-bottom: 50px;
     h1 {
+        width: 539px;
+        margin: 0 auto;
         margin-bottom: 0;
-        margin-top: 99px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: block;
+        text-align: center;
+        font-size: 2.25rem;
+        font-weight: 700;
     }
 }
 .list { 
@@ -200,7 +209,7 @@ button.start:active {
     }
 }
 //
-.container-footer{
+.footer .container{
     width: min(90%, 1200px);
     margin: 0 auto;
     padding: 70px 0;
@@ -225,7 +234,6 @@ button.start:active {
     ul {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         gap: 15px;
     }
     a {
