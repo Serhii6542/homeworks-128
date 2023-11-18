@@ -7,6 +7,10 @@ body {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
 }
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
 header {
     height: 80px;
     /* padding: 17px 120px; */
@@ -20,8 +24,6 @@ ul {
 }
 .header {
     .container {
-        width: min(90%, 1200px);
-        margin: 0 auto;
         .main-nav {
             margin: 17px 0;
             display: flex;
@@ -85,12 +87,7 @@ ul {
 .sign-up:active {
     background-color: #8b8b8b;
 }
-/* section.superpowers {
-    padding: 70px 120px 100px;
-} */
 .superpowers .container {
-    width: min(90%, 1200px);
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -127,8 +124,11 @@ button.start:active {
     background-color: #afafaf;
 }
 // //не получилося
-.tools .container {
-    padding-bottom: 74px;
+.tools {
+    background: url(../img/bg.svg) 50% bottom no-repeat;
+    .container {
+        padding-bottom: 74px;
+    }
 }
 .card {
     margin-bottom: 70px;
@@ -145,16 +145,13 @@ button.start:active {
         font-weight: 700;
     }
 }
-.list { 
-    width: min(90%, 1200px);
-    margin: 0 auto;
-    li {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        width: 270px;
-    }
+.list li {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 270px;
 }
+
 .list ul {
     display: flex;
     justify-content: space-between;
@@ -210,8 +207,6 @@ button.start:active {
 }
 //
 .footer .container{
-    width: min(90%, 1200px);
-    margin: 0 auto;
     padding: 70px 0;
 }
 .footer {
