@@ -1,0 +1,100 @@
+@import 'fonts';
+
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'PT Sans';
+    font-size: 1.75rem;
+    line-height: 3rem;
+    color: #000;
+}
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+    &:hover {
+        color: #cfcfcf;
+    }
+}
+img {
+    vertical-align: top;
+}
+.header {
+    padding: 13px 0;
+    margin-bottom: 70px;
+    .container {
+        height: 54px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+    
+.eng{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    span a{
+        font-family: 'Tourney';
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Staatliches';
+        letter-spacing: 0.04125rem;
+    }
+}
+h1 {
+    font-family: 'Francois One';
+    font-weight: 400;
+    font-size: 2.25rem;
+    letter-spacing: 0.09rem;
+    text-transform: uppercase;
+}
+main .container {
+    display: flex;
+    padding-bottom: 90px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 70px;
+}
+.chapter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+    .title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        small {
+            font-family: 'Farro';
+            letter-spacing: 0.075rem;
+        }
+    }
+}
+.line {
+    color: #000;
+    text-decoration-line: underline;
+}
+.italic {
+    font-style: italic;
+}
+.fw700 {
+    font-weight: 700;
+}
+.position {
+    background-color: #DADADA;
+}
