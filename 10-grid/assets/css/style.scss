@@ -1,3 +1,5 @@
+@import 'fonts';
+@import 'icon';
 * {
     margin: 0;
     padding: 0;
@@ -26,9 +28,52 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    transition: all 0.2s ease;
     &:hover .photo:not(:hover) {
-        transition: all 0.2s ease;
         opacity: 0.7;
+    }
+    .photo {
+        overflow: hidden;
+        position: relative;
+        transition: all 0.2s ease;
+        border-radius: 20px;
+        img {
+            transition: all 0.2s ease;
+
+        }
+        &:hover {
+            .icons {
+                transform: translateY(0);
+            }
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+            img {
+                scale: 1.1;
+                
+            }
+        }
+        .info {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            color: #fff;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+            .name {
+                font-family: 'Roboto';
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+            .date {
+                font-family: 'Roboto';
+                font-size: 1.25rem;
+                font-weight: 400;
+                color: #E0E0E0;
+            }
+        }
     }
 }
 img {
@@ -46,4 +91,34 @@ img {
 }
 .area {
     grid-area: 2/1/4/3;
+}
+.icons {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(-100%);
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+    .icon {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f980;
+        border-radius: 8px;
+        color: #4F4F4F;
+        cursor: pointer;
+        &:hover {
+            background: #ececec;
+        }
+        &:active {
+            background: #f7f7f7;
+        }
+    }
 }
