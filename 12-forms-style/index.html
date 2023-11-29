@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/plugins/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <form action="" method="post" class="form-singup">
+                <div class="forms">
+                    <h2>Create an Account</h2>
+                    <div class="wrapper">
+                        <div class="form name">
+                            <label for="firstname">First Name</label>
+                            <input type="text" name="firstname" id="firstname">
+                        </div>
+                        <div class="form name">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" name="lastname" id="lastname">
+                        </div>
+                    </div>
+                    <div class="email">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email">
+                        <span class="email-text">We'll never share your email with anyone else.</span>
+                    </div>
+                    <div class="wrapper-radio">
+                        <div class="radio">
+                            <input type="radio" name="radio" id="Male" value="Male">
+                            <label for="Male">Male</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="radio" id="Female" value="Female">
+                            <label for="Female">Female</label>
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="form country">
+                            <label for="country">Country</label>
+                            <select name="country" id="country">
+                                <option value=""disabled selected>Select</option>
+                                <option value="Ukraine">Ukraine</option>
+                                <option value="USA">USA</option>
+                            </select>
+                        </div>
+                        <div class="form city">
+                            <label for="city">City</label>
+                            <input type="text" name="city" id="city">
+                        </div>
+                    </div>
+                    <div class="btn-btn">
+                        <button type="button" class="btn">Sign Up</button>
+                    </div>
+                    <div class="terms">
+                        <div class="textterms">
+                            <span class="text-terms">By clicking the 'Sign Up' button, you confirm that you accept our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</span>
+                        </div>
+                    </div>
+                    <div class="log-in">
+                        <span class="account">Have an account?</span>
+                        <a href="#" class="Login">Log In</a>
+                    </div>
+                </div>
+            </form>
+            <form action="" method="post" class="profile">
+                <div class="forms">
+                    <h2>Profile</h2>
+                    <div class="info-profile">
+                        <div class="img">
+                            <img src="assets/img/📷 Image.svg" alt="">
+                        </div>
+                        <div class="wrapper-profile">
+                            <div class="file">
+                                <input type="file">
+                                <a href="#" class="bt"><i class="icon-delete"></i></a>
+                            </div>
+                            <span class="mb">Up to 1 MB (300x300 px)</span>
+                        </div>
+                    </div>
+                    <div class="wrapper name">
+                        <div class="form name">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name">
+                        </div>
+                        <div class="form email">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="form countryy">
+                            <label for="country">Country</label>
+                            <select name="country" id="country" class="select-plagin">
+                                <option value=""disabled selected>Select</option>
+                                <option value="Ukraine">Ukraine</option>
+                                <option value="USA">USA</option>
+                            </select>
+                        </div>
+                        <div class="form city">
+                            <label for="city">City</label>
+                            <input type="text" name="city" id="city">
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="form zip">
+                            <label for="zip">Zip Code</label>
+                            <input type="text" name="zip" id="zip">
+                        </div>
+                        <div class="form number">
+                            <label for="number">Phone Number</label>
+                            <input type="tel" name="tel" id="number">
+                        </div>
+                    </div>
+                    <div class="wrapper-butn">
+                        <button type="button" class="butn">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/plugins/js/select2.full.min.js"></script>
+    
+    <script>
+    $(document).ready(function() {
+        $('.select-plagin').select2();
+    });
+    </script>
+</body>
+</html>
