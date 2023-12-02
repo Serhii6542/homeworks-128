@@ -6,6 +6,7 @@
 body {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
+    font-feature-settings: 'clig' off, 'liga' off;
 }
 .container {
     width: min(90%, 1200px);
@@ -126,6 +127,7 @@ button.start:active {
 // //не получилося
 .tools {
     background: url(../img/bg.svg) 50% bottom no-repeat;
+    margin-bottom: 100px;
     .container {
         padding-bottom: 74px;
     }
@@ -205,7 +207,51 @@ button.start:active {
     }
     }
 }
-//
+.position {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.position-wrapper {
+    width: 525px;
+    color: #544837;
+    font-weight: 500;
+    line-height: 1.625rem;
+    &.mg {
+        width: 505px;
+    }
+    &.markets {
+       width: 486px; 
+    }
+    .position-list {
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            h3 {
+                color: #2F281E;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            .position-li {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            }
+        }
+    }
+}
+.position-title {
+    align-items: flex-start;
+    margin-bottom: 40px;
+    h2 {
+        color: #2F281E;
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+}
 .footer .container{
     padding: 70px 0;
 }
