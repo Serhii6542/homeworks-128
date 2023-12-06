@@ -3,15 +3,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
 body {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-feature-settings: 'clig' off, 'liga' off;
 }
+main {
+    flex-grow: 1;
+}
 .container {
     width: min(90%, 1200px);
     margin: 0 auto;
 }
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 header {
     height: 80px;
     /* padding: 17px 120px; */
@@ -30,7 +45,12 @@ ul {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            
         }
+    }
+    .hamburger {
+        display: none;
+
     }
 }
 
@@ -50,9 +70,9 @@ ul {
     color: orange;
 }
 .sign {
-    width: 252px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 32px;
 }
 .sign button {
     padding: 13px 25px;
@@ -90,11 +110,12 @@ ul {
 }
 .superpowers .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 56px;
 }
 .text {
-    width: 500px;
+    width: 50%;
 }
 h1 {
     font-size: 2.75rem;
@@ -137,9 +158,8 @@ button.start:active {
 }
 .subtitle {
     margin-bottom: 50px;
-    h1 {
-        width: 539px;
-        margin: 0 auto;
+    h2 {
+        padding: 0 330px;
         margin-bottom: 0;
         display: block;
         text-align: center;
@@ -151,12 +171,13 @@ button.start:active {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 270px;
+    width: 25%;
 }
 
 .list ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
     list-style: none;
 }
 .logo-list .image {
@@ -167,6 +188,9 @@ button.start:active {
     border-radius: 15px;
     text-align: center;
     line-height: 53px;
+    // img {
+    //     height: 18px;
+    // }
     &.designe {
         background-color: #FAB005;
     }
@@ -175,10 +199,6 @@ button.start:active {
     }
     &.second-tests {
         background-color: #4DADF7;
-    }
-    img {
-        font-size: 1rem;
-        font-weight: 400;
     }
 }
 .text-list h2 {
@@ -212,17 +232,22 @@ button.start:active {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 100px;
+    &.mg {
+        margin-bottom: 0;
+        flex-direction: row-reverse;
+    }
 }
 .position-wrapper {
-    width: 525px;
+    width: calc(50% - 113px);
     color: #544837;
     font-weight: 500;
     line-height: 1.625rem;
     &.mg {
-        width: 505px;
+        width: calc(50% - 125px);
     }
     &.markets {
-       width: 486px; 
+       width: calc(50% - 174px);
+       flex-direction: row-reverse; 
     }
     .position-list {
         ul {
@@ -240,6 +265,10 @@ button.start:active {
                 gap: 30px;
             }
         }
+        .position-li img {
+            width: 35px;
+            aspect-ratio: 1;
+        }
     }
 }
 .position-title {
@@ -255,12 +284,12 @@ button.start:active {
 .footer .container{
     padding: 70px 0;
 }
-.footer {
+.footer-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
-.footer-text {
+.ft.text {
     width: min(90%, 135px);
     display: flex;
     flex-direction: column;
@@ -286,7 +315,7 @@ button.start:active {
         }
     }
 }
-.footer-form {
+.ft.form {
     width: min(90%, 340px);
     display: flex;
     flex-direction: column;
@@ -335,5 +364,134 @@ button.start:active {
     }
     &:active {
         background-color: #afafaf;
+    }
+}
+@media screen and (max-width:1300px) {
+    .text h1{
+        font-size: 2.2rem;
+    }
+    .subtitle h2 {
+        padding: 0 200px;
+    }
+    .list ul{
+        flex-wrap: wrap; 
+        li {
+            width: calc(50% - 20px);
+        }
+    }
+    .position-wrapper.markets {
+        width: calc(50% - 100px)
+    }
+}
+@media screen and (max-width: 1150px) {
+    .text h1{
+        font-size: 2rem;
+    }
+    .superpowers {
+        padding-bottom: 40px;
+    }
+    .tools {
+        margin-bottom: 40px;
+        .container {
+            padding-bottom: 40px;
+        }
+    }
+    .position {
+        flex-direction: column;
+        margin-bottom: 50px;
+        &.mg {
+            flex-direction: column;
+        }
+        .position-wrapper {
+            margin-bottom: 30px;
+            
+        }
+    }
+    .position-title {
+        margin-bottom: 20px;
+        h2{
+            line-height: 2.2rem;
+        }
+    }
+    .footer .container {
+        padding: 0 0 30px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .header {
+        .main-nav {
+            .nav {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    }
+    .text h1{
+        font-size: 1.5rem;
+    }
+    .subtitle h2 {
+        font-size: 1.5rem;
+    }
+    .position-wrapper .position-title h2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .footer-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    .ft {
+        width: calc(50% - 20px);
+    }
+    }
+}
+@media screen and (max-width: 780px) {
+    .sign-in {
+        display: none;
+    }
+    .sign-up {
+        display: none;
+    }
+    .superpowers .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .subtitle h2 {
+        padding: 0 100px;
+    }
+    .list ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        li {
+            gap: 15px;
+        }
+    }
+    .footer-wrapper .ft {
+        gap: 15px;
+        &.text ul{
+            gap: 7px;
+        }
+    }
+    .ft.form h2 {
+        font-size: 1rem;
+    }
+    .tel input[type=tel] {
+        width: 220px;
+    }
+    .btn button {
+        width: 120px;
+        padding: 13px 20px;
+    }
+}
+@media screen and (max-width: 580px) {
+    .superpowers .container {
+        flex-wrap: wrap;
+    }
+    .subtitle h2 {
+        padding: 0 40px;
     }
 }

@@ -87,31 +87,6 @@ main {
                 justify-content: center;
                 align-items: center;
                 transition: all 0.2s ease;
-                img {
-                    transition: all 0.2s ease;
-                }
-                &:hover {
-                    border-color: #3DB370;
-                    .icon-svg.mg{
-                        background: url('../img/megaphone-green.svg') center center no-repeat;
-                        img {
-                            opacity: 0;
-                        }
-                    }
-                    .icon-svg.bi{
-                        background: url('../img/building-green.svg') center center no-repeat;
-                        img {
-                            opacity: 0;
-                        }
-                    }
-                    .icon-svg.ph{
-                        background: url('../img/phone-green.svg') center center no-repeat;
-                        img {
-                            opacity: 0;
-                        }
-                    }
-                    
-                }
                 .content {
                     display: flex;
                     flex-direction: column;
@@ -131,11 +106,23 @@ main {
                     .icon {
                         width: 64px;
                         height: 64px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        // display: inline-flex;
+                        // align-items: center;
+                        // justify-content: center;
+                        position: relative;
                         border: 1px solid rgba(21, 101, 216, 0.10);
                         border-radius: 16px;
+                        svg {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            height: 36px;
+                        }
+                        .green-icon {
+                            transition: all 0.2s ease;
+                            opacity: 0;
+                        }
                     }
                     .link a{
                         text-decoration: none;
@@ -143,6 +130,17 @@ main {
                         font-weight: 600;
                         &:hover {
                             text-decoration: underline;
+                        }
+                    }
+                    
+                }
+                &:hover {
+                    border-color: #3DB370;
+                    .content {
+                        .icon {
+                            .green-icon {
+                                opacity: 1;
+                            }
                         }
                     }
                 }
