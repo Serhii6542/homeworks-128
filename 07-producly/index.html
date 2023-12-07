@@ -11,6 +11,37 @@
     <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 <body>
+    <div class="page-overlay"></div>
+    <div class="menu-panel">
+        <div class="panel">
+            <div class="panel-top">
+                <div class="log">
+                    <a href="#"><img src="assets/img/Logo.svg" alt=""></a>
+                </div>
+                <div class="hamburger-tel">
+                    <button id="hamb_btn_mob" class="hamburger hamburger--spin is-active" type="button">
+                        <span class="hamburger-box">
+                          <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="panel-bottom">
+                <nav class="nav-mobile">
+                    <ul>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Customers</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>  
+                </nav>
+            </div>
+        </div>
+        <div class="sign tel">
+            <button type="button" class="sign-in">Sign In</button>
+            <button type="button" class="sign-up">Sign Up</button>
+        </div>
+    </div>
     <div class="page-wrapper">
         <header class="header" id="header">
             <div class="container">
@@ -29,7 +60,7 @@
                     <div class="sign">
                         <button type="button" class="sign-in">Sign In</button>
                         <button type="button" class="sign-up">Sign Up</button>
-                        <button class="hamburger" type="button">
+                        <button id="hamb_btn" class="hamburger hamburger--spin" type="button">
                             <span class="hamburger-box">
                               <span class="hamburger-inner"></span>
                             </span>
@@ -248,5 +279,13 @@
             </div>
         </footer>
     </div>
+    <script>
+        function toggleMobileNav(){
+            document.body.classList.toggle('open-mobile-menu')
+            window.hamb_btn.classList.toggle('is-active')
+        }
+        window.hamb_btn.addEventListener('click', toggleMobileNav)
+        window.hamb_btn_mob.addEventListener('click', toggleMobileNav)
+    </script>
 </body>
 </html>
