@@ -1,0 +1,306 @@
+$base-black: #000;
+$Grey-700: #565656;
+$Grey-100: #F4F4F4;
+
+@import 'fonts';
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a, button {
+    transition: all 0.2s ease;
+}
+
+body {
+    font-family: 'Lato';
+    font-size: 1rem;
+    color: $base-black;
+}
+
+.container {
+    width: min(90%, 1170px);
+    margin: 0 auto;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(#FFF, 0.7);
+    backdrop-filter: blur(2px);
+    .container {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s ease;
+        a {
+            text-decoration: none;
+            color: $base-black;
+        }
+        span {
+            font-family: 'Lato';
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 150%;
+            letter-spacing: 0.5rem;
+        }
+    }
+}
+main {
+    flex-grow: 1;
+    padding-top: 100px;
+}
+.wrapper-pic {
+    width: min(100%, 1170px);
+    aspect-ratio: 117/50;
+}
+.platform {
+    h1 {
+        font-family: 'Red Hat Display';
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 4rem;
+        letter-spacing: 0.15rem;
+        margin-bottom: 70px;
+        transition: all 0.2s ease;
+    }
+    .wrapper-pic {
+        margin-bottom: 90px;
+    }
+    .descript {
+        width: min(100%, 570px);
+        margin-bottom: 90px;
+        h2 {
+            font-family: 'Red Hat Display';
+            font-size: 1.75rem;
+            font-weight: 600;
+            line-height: 166%;
+            letter-spacing: 0.175rem;
+            margin-bottom: 50px;
+        }
+        p {
+            color: $Grey-700;
+            font-size: 1.1875rem;
+            font-weight: 400;
+            line-height: 2rem;
+            letter-spacing: 0.05938rem;
+        }
+        p + p {
+            margin-top: 30px;
+        }
+    }
+}
+.wrapper-div {
+    h2 {
+        font-family: 'Red Hat Display';
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 166%;
+        letter-spacing: 0.175rem;
+        margin-bottom: 50px;
+    }
+    .wrapper-pic {
+        margin-bottom: 20px;
+    }
+    .descript {
+        margin-bottom: 90px;
+        p {
+            color: $Grey-700;
+            font-size: 1.1875rem;
+            font-weight: 400;
+            line-height: 2rem;
+            letter-spacing: 0.05938rem;
+        }
+        p + p {
+            margin-top: 30px;
+        }
+    }
+}
+footer {
+    background-color: $Grey-100;
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 70px 0 30px;
+    }
+    .feedback {
+        display: flex;
+        justify-content: space-between;
+        transition: all 0.2s ease;
+        h2 {
+            font-family: 'Red Hat Display';
+            font-size: 3rem;
+            font-weight: 400;
+            line-height: 4rem;
+            letter-spacing: 0.15rem;
+            margin-bottom: 30px;
+        }
+        .cont {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .contacts {
+                line-height: 166%;
+                letter-spacing: 0.1rem;
+                a {
+                    text-decoration: none;
+                    color: $base-black;
+                    transition: all 0.2s ease;
+                    &:hover {
+                        color: #b4b4b4;
+                    }
+                }
+            }
+        }
+        .soc {
+            display: inline-flex;
+            justify-content: space-between;
+            gap: 23px;
+            align-items: center;
+            .icon-soc {
+                display: flex;
+                width: 50px;
+                height: 50px;
+                padding: 10px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $Grey-700;
+                transition: all 0.2s ease;
+                svg {
+                    fill: $Grey-700;
+                }
+                &:hover {
+                    background-color: $Grey-700;
+                    svg {
+                        fill: #FFF;
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        text-align: center;
+        font-size: 0.75rem;
+        line-height: 166%;
+        letter-spacing: 0.075rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header .container {
+        height: 60px;
+    }
+    .platform {
+        h1 {
+            font-size: 2.0625rem;
+            line-height: 3.125rem;
+            letter-spacing: 0.10313rem;
+            margin-bottom: 50px;
+        }
+        .descript {
+            margin-bottom: 70px;
+            h2 {
+                margin-bottom: 50px;
+            }
+        }
+    }
+    .wrapper-pic {
+        aspect-ratio: 70/38;
+    }
+    .wrapper-div .descript {
+        margin-bottom: 70px;
+        &.ls-ch {
+            margin-bottom: 90px;
+        }
+    }
+    
+
+    footer .container {
+        gap: 0;
+        padding: 50px 0 50px;
+    }
+    .container .feedback {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h2 {
+            margin-bottom: 20px;
+        }
+        .cont {
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .soc {
+            margin-bottom: 40px;
+        }
+    }
+}
+@media screen and (max-width: 650px) {
+    .platform {
+        .descript h2 {
+            font-size: 1.625rem;
+            letter-spacing: 0.1625rem;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 1.875rem;
+            letter-spacing: 0.09375rem;
+            margin-bottom: 40px;
+        }
+        .wrapper-pic {
+            aspect-ratio: 1;
+            margin-bottom: 70px;
+        }
+    }
+    .wrapper-pic {
+        aspect-ratio: 1;
+    }
+    .container .wrapper-div {
+        h2 {
+            font-size: 1.625rem;
+            letter-spacing: 0.1625rem;
+            margin-bottom: 40px;
+        }
+        .descript {
+            margin-bottom: 70px;
+            p {
+                font-size: 1rem;
+                letter-spacing: 0.05rem;
+            }
+        }
+    }
+    .container {
+        .contacts-info h2 {
+            font-size: 2rem;
+        }
+        .copyright {
+            font-size: 1rem;
+            letter-spacing: 0.1rem;
+        }
+    }
+}

@@ -546,23 +546,33 @@ button.start:active {
         gap: 20px;
         li {
             gap: 15px;
+            width: 100%;
         }
     }
-    .footer-wrapper .ft {
-        gap: 15px;
-        &.text ul{
-            gap: 7px;
+    .text {
+        width: 100%;
+    }
+    .position-wrapper {
+        width: 100%;
+        &.mg {
+            width: 100%;
+        }
+        &.markets {
+            width: 100%;
         }
     }
-    .ft.form h2 {
-        font-size: 1rem;
+    .footer-wrapper {
+        align-items: flex-start;
     }
+    .ft.form {
+        width: 100%;
+        h2 {
+            font-size: 1rem;
+
+        }
+    } 
     .tel input[type=tel] {
         width: 220px;
-    }
-    .btn button {
-        width: 120px;
-        padding: 13px 20px;
     }
 }
 @media screen and (max-width: 580px) {
