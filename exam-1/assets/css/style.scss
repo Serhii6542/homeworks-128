@@ -1077,6 +1077,9 @@ footer .container {
             text-align: center;
         }
     }
+    .benefits.content .container .item .tran-sfer {
+        padding-right: 0;
+    }
 }
 @media screen and (max-width: 400px) {
     .promises .container .features .btn-big .btn .big::after {
@@ -1099,5 +1102,10 @@ footer .container {
     }
     .contacts .container .forms {
         width: 100%;
+    }
+    .contacts .container .forms form .form.btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
