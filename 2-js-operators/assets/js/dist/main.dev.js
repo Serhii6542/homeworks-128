@@ -22,9 +22,9 @@ function task3() {
 function task4() {
   var sum = prompt("Введіть суму грошей у вашому гаманці");
   var chocolatePrice = prompt("Введіть ціну однієї шоколадки");
-  var numberChocolates = Math.floor(parseInt(sum / chocolatePrice));
-  var rest = parseInt(sum) - parseInt(chocolatePrice) * numberChocolates;
-  alert("\u0412\u0438 \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u0440\u0438\u0434\u0431\u0430\u0442\u0438 ".concat(numberChocolates, " \u0448\u043E\u043A\u043E\u043B\u0430\u0434\u043E\u043A \u043D\u0430 ").concat(sum, " \u0433\u0440\u0438\u0432\u0435\u043D\u044C \u0443 \u0432\u0430\u0448\u043E\u043C\u0443 \u0433\u0430\u043C\u0430\u043D\u0446\u0456, \u0456 \u0432\u0430\u0448\u0430 \u0440\u0435\u0448\u0442\u0430 \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0435\u043C\u0435 ").concat(rest, " \u0433\u0440\u0438\u0432\u0435\u043D\u044C"));
+  var numberChocolates = Math.floor(parseFloat(sum / chocolatePrice));
+  var rest = parseFloat(sum) - parseFloat(chocolatePrice) * numberChocolates;
+  alert("\u0412\u0438 \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u0440\u0438\u0434\u0431\u0430\u0442\u0438 ".concat(numberChocolates, " \u0448\u043E\u043A\u043E\u043B\u0430\u0434\u043E\u043A \u043D\u0430 ").concat(sum, " \u0433\u0440\u0438\u0432\u0435\u043D\u044C \u0443 \u0432\u0430\u0448\u043E\u043C\u0443 \u0433\u0430\u043C\u0430\u043D\u0446\u0456, \u0456 \u0432\u0430\u0448\u0430 \u0440\u0435\u0448\u0442\u0430 \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0435\u043C\u0435 ").concat(rest.toFixed(2), " \u0433\u0440\u0438\u0432\u0435\u043D\u044C"));
 }
 
 function task5() {
@@ -32,7 +32,7 @@ function task5() {
   var s = parseInt(numder / 100);
   var d = parseInt(numder / 10) % 10;
   var o = numder % 10;
-  var result = String(o) + String(d) + String(s);
+  var result = o * 100 + d * 10 + s;
   alert("\u0412\u0430\u0448\u0435 \u0447\u0438\u0441\u043B\u043E \u0437\u0430\u0434\u043E\u043C \u043D\u0430 \u043F\u0435\u0440\u0435\u0434 \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C ".concat(result));
 }
 
@@ -40,8 +40,8 @@ function task6() {
   var money = prompt("Введіть суму вкладу в банк");
   var annualPercentage = 0.05;
   var monthlyPercentage = annualPercentage / 12;
-  var result = parseInt(money) + parseInt(money) * (monthlyPercentage * 2);
-  alert("\u0421\u0443\u043C\u0430 \u0437 \u043D\u0430\u0440\u0430\u0445\u043E\u0432\u0430\u043D\u0438\u043C\u0438 \u0432\u0456\u0434\u0441\u043E\u0442\u043A\u0430\u043C\u0438 \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C ".concat(result.toFixed(2), " \u0433\u0440\u0438\u0432\u0435\u043D\u044C"));
+  var result = parseInt(money) * (monthlyPercentage * 2);
+  alert("\u0421\u0443\u043C\u0430 \u043D\u0430\u0440\u0430\u0445\u043E\u0432\u0430\u043D\u0438\u0445 \u0432\u0456\u0434\u0441\u043E\u0442\u043A\u0456\u0432 \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C ".concat(result.toFixed(2), " \u0433\u0440\u0438\u0432\u0435\u043D\u044C"));
 }
 
 function task7() {
