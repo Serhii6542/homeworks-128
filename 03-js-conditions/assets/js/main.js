@@ -176,11 +176,15 @@ function task6() {
         document.getElementById('definition').innerHTML = '<span style="color: red">Введіть число</span>';
         return;
     }
-    if(99999<numbr){
+    if(numbr<10000){
         document.getElementById('definition').innerHTML = '<span style="color: red">Введіть п’ятирозрядне число число</span>';
         return;
     }
-    if(-99999>numbr){
+    if(numbr>99999){
+        document.getElementById('definition').innerHTML = '<span style="color: red">Введіть п’ятирозрядне число число</span>';
+        return;
+    }
+    if(0>numbr){
         document.getElementById('definition').innerHTML = '<span style="color: red">Введіть п’ятирозрядне число число</span>';
         return;
     }
@@ -320,21 +324,26 @@ function task10() {
     let sign = '';
     do {
         midle = parseInt((min + max) / 2);
-        switch(sign){
-            case '>':
-                min = midle;
-                answe_r = midle + 1;
-            break;
-            case '<':
-                max = midle;
-                answe_r = midle;
-            break;
-            case '=':
-                answe_r = midle;
-                alert(`Ваше число ${answe_r}`)
+        sign = prompt(`Ваше число більше ${midle} чи менше ?`);
+        if(!isNaN(sign)){
+            alert('Введіть один із цих знаків <, >, =.')
             break;
         }
-        sign = prompt(`Ваше число більше ${midle} чи менше ?`)
+        if(sign !== '>' && sign !== '<' && sign !== '='){
+            alert('Введіть один із цих знаків <, >, =.')
+            break;
+        }
+        if(sign === '<'){
+            min = midle;
+            answe_r = midle + 1;
+
+        }else if(sign === '>'){
+            max = midle;
+            answe_r = midle;
+        }else if(sign === '='){
+            max = min;
+            answe_r = midle;
+        }
     } while(max - min > 1);
     alert(`Ваше число ${answe_r}`)
 }
