@@ -97,7 +97,11 @@ function task3() {
   if (isNaN(num2)) {
     document.getElementById('resul_t').innerHTML = '<span style="color: red">Введіть число в другий рядок</span>';
     return;
-  }
+  } // if(num1>100 && num1<-100 && num2>100 && num2<-100){
+  //     document.getElementById('resul_t').innerHTML = '<span style="color: red">Введіть число від -100 до 100</span>';
+  //     return;
+  // }
+
 
   if (100 < num1) {
     document.getElementById('resul_t').innerHTML = '<span style="color: red">Введіть число від -100 до 100</span>';
@@ -201,17 +205,7 @@ function task6() {
     return;
   }
 
-  if (numbr < 10000) {
-    document.getElementById('definition').innerHTML = '<span style="color: red">Введіть п’ятирозрядне число число</span>';
-    return;
-  }
-
-  if (numbr > 99999) {
-    document.getElementById('definition').innerHTML = '<span style="color: red">Введіть п’ятирозрядне число число</span>';
-    return;
-  }
-
-  if (0 > numbr) {
+  if (numbr < 10000 || numbr > 99999) {
     document.getElementById('definition').innerHTML = '<span style="color: red">Введіть п’ятирозрядне число число</span>';
     return;
   }
@@ -475,11 +469,11 @@ function nextDate() {
         if (dayIn === 29) {
           dayOut = 1;
           monthOut = monthIn + 1;
-        } else {
-          if (dayIn === 28) {
-            dayOut = 1;
-            monthOut = monthIn + 1;
-          }
+        }
+      } else {
+        if (dayIn === 28) {
+          dayOut = 1;
+          monthOut = monthIn + 1;
         }
       }
 
