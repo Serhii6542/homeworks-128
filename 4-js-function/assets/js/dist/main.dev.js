@@ -10,14 +10,23 @@ function task1_1() {
 
 function task1_2() {
   document.getElementById('Function').innerHTML = "<span>Стрілкові функції зручні для простих операцій, особливо для тих, що можна записати в один рядок. Вони бувають двох видів:1.Без фігурних дужок де права частина є виразом функції, функія виконує вираз і повертає його результат. Круглі дужки в функції можна опускати якщо в неї є лиш один аргумент. 2. З фігурними дужками  дужки дозволяють включити в функцію більше однієї інструкції, але при цьому потрібно явно вказати return, щоб щось повернути.</span>";
+}
+
+function task2() {
+  var numb = document.getElementById('num').value;
+  var res = '';
+  res = quantityDeduction(numb);
+  document.getElementById('rez').innerText = "".concat(res);
+}
+
+function quantityDeduction(n) {
+  return n.length;
 } // function task2(){
-//     const numb = document.getElementById('num');
-//     let res ='';
-//     res = quantityDeduction(numb);
-//     document.getElementById('number').innerText = `${res}`;
+//     const argCnt = calcArg(1,2,3,4,5,6,7,8,9,8,7,6,5,4,3,2,1);
+//     document.getElementById('rez').innerText = `У функцію передано ${argCnt} аргументів`;
 // }
-// function quantityDeduction(n){
-//     return n.length;
+// function calcArg(){
+//     return arguments.length
 // }
 
 
@@ -44,9 +53,9 @@ function comparison(num, num_2) {
   var result = 0;
 
   if (num < num_2) {
-    result += -1;
+    result = -1;
   } else if (num > num_2) {
-    result += 1;
+    result = 1;
   } else if (num === num_2) {
     result = 0;
   }
@@ -138,7 +147,7 @@ function decision(a, b) {
 
 function task7() {
   var perfctNamb = document.getElementById('perfectNamb').valueAsNumber;
-  var resNamb = 0;
+  var resNamb = false;
   var conclusion = '';
 
   if (isNaN(perfctNamb)) {
@@ -153,10 +162,10 @@ function task7() {
 
   resNamb = isPerfectNumber(perfctNamb);
 
-  if (perfctNamb === resNamb) {
-    conclusion += 'Число є досконалим';
+  if (resNamb) {
+    conclusion = 'Число є досконалим';
   } else {
-    conclusion += 'Число не є досконалим';
+    conclusion = 'Число не є досконалим';
   }
 
   document.getElementById('perfect_number').innerText = conclusion;
@@ -171,27 +180,42 @@ function isPerfectNumber(n) {
     }
   }
 
-  return divis;
-} // function perfectRangeNumbers(a,b){
-//     let res = 0;
-//     let divis = 0;
-//     let perNum = '';
-//     let from = a,
-//         to = b;
-//     if(a > b){
-//         from = b;
-//         to = a;
-//     }
-//     for(let i = from;i<=to; i++){
-//         res += i;
-//         for (let i = 1; i < res; i++) {
-//             if (res % i == 0 ) {
-//                 divis += i;
-//                 if(res === divis){
-//                     perNum += divis + ' ';
-//                 }
-//             }
-//         }
-//     }
-//     return perNum;
-// }
+  return n === divis;
+}
+
+function task8() {
+  var numPer1 = document.getElementById('num_1').valueAsNumber;
+  var numPer2 = document.getElementById('num_2').valueAsNumber;
+  var resPer = '';
+
+  if (isNaN(numPer1) || isNaN(numPer2)) {
+    document.getElementById('range_numbers').innerHTML = '<span style="color:red;">Введіть число</span>';
+    return;
+  } else if (0 > numPer1 || 0 > numPer2) {
+    document.getElementById('range_numbers').innerHTML = '<span style="color:red;">Введіть число яке більше або дорівнює 0</span>';
+    return;
+  } else {
+    resPer = perfectRangeNumbers(numPer1, numPer2);
+  }
+
+  document.getElementById('range_numbers').innerText = "\u0417 \u0432\u0430\u0448\u043E\u0433\u043E \u043F\u0440\u043E\u043C\u0456\u0436\u043A\u0443 \u0434\u043E\u0441\u043A\u043E\u043D\u0430\u043B\u0438\u043C\u0438 \u0447\u0438\u0441\u043B\u0430\u043C\u0438 \u0454 ".concat(resPer);
+}
+
+function perfectRangeNumbers(a, b) {
+  var res = '';
+  var from = a,
+      to = b;
+
+  if (a > b) {
+    from = b;
+    to = a;
+  }
+
+  for (var i = from; i <= to; i++) {
+    if (isPerfectNumber(i)) {
+      res += i + ' ';
+    }
+  }
+
+  return res;
+}

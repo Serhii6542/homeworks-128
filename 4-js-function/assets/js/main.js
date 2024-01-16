@@ -8,17 +8,25 @@ function task1_2(){
     document.getElementById('Function').innerHTML = "<span>Стрілкові функції зручні для простих операцій, особливо для тих, що можна записати в один рядок. Вони бувають двох видів:1.Без фігурних дужок де права частина є виразом функції, функія виконує вираз і повертає його результат. Круглі дужки в функції можна опускати якщо в неї є лиш один аргумент. 2. З фігурними дужками  дужки дозволяють включити в функцію більше однієї інструкції, але при цьому потрібно явно вказати return, щоб щось повернути.</span>";
 }
 
+function task2(){
+    const numb = document.getElementById('num').value;
+    let res ='';
+    res = quantityDeduction(numb);
+    document.getElementById('rez').innerText = `${res}`;
+}
+
+function quantityDeduction(n){
+    return n.length;
+}
+
 // function task2(){
-//     const numb = document.getElementById('num');
-//     let res ='';
-//     res = quantityDeduction(numb);
-//     document.getElementById('number').innerText = `${res}`;
+//     const argCnt = calcArg(1,2,3,4,5,6,7,8,9,8,7,6,5,4,3,2,1);
+//     document.getElementById('rez').innerText = `У функцію передано ${argCnt} аргументів`;
 // }
 
-// function quantityDeduction(n){
-//     return n.length;
+// function calcArg(){
+//     return arguments.length
 // }
-
 
 function task3(){
     const num1 = document.getElementById('num1').valueAsNumber;
@@ -39,9 +47,9 @@ function task3(){
 function comparison(num,num_2){
     let result = 0
     if(num<num_2){
-        result += -1;
+        result = -1;
     } else if(num>num_2){
-        result += 1;
+        result = 1;
     } else if(num === num_2){
         result=0;
     }
@@ -118,7 +126,7 @@ function decision(a,b){
 
 function task7(){
     const perfctNamb = document.getElementById('perfectNamb').valueAsNumber;
-    let resNamb = 0;
+    let resNamb = false;
     let conclusion = '';
 
     if(isNaN(perfctNamb)){
@@ -132,10 +140,10 @@ function task7(){
     
     resNamb = isPerfectNumber(perfctNamb);
 
-    if(perfctNamb===resNamb){
-        conclusion +='Число є досконалим';
+    if(resNamb){
+        conclusion ='Число є досконалим';
     } else{
-        conclusion +='Число не є досконалим';
+        conclusion ='Число не є досконалим';
     }
     
     document.getElementById('perfect_number').innerText = conclusion;
@@ -149,31 +157,38 @@ function isPerfectNumber(n){
             divis += i;
         }
     }
-    return divis;
+    return n===divis;
 }
 
-// function perfectRangeNumbers(a,b){
-//     let res = 0;
-//     let divis = 0;
-//     let perNum = '';
-//     let from = a,
-//         to = b;
+function task8(){
+    const numPer1 = document.getElementById('num_1').valueAsNumber;
+    const numPer2 = document.getElementById('num_2').valueAsNumber;
+    let resPer = '';
+    if(isNaN(numPer1) || isNaN(numPer2)){
+        document.getElementById('range_numbers').innerHTML = '<span style="color:red;">Введіть число</span>';
+        return;
+    }else if(0>numPer1 || 0>numPer2){
+        document.getElementById('range_numbers').innerHTML = '<span style="color:red;">Введіть число яке більше або дорівнює 0</span>';
+        return;
+    }else{
+        resPer = perfectRangeNumbers(numPer1,numPer2);
+    }
+    document.getElementById('range_numbers').innerText = `З вашого проміжку досконалими числами є ${resPer}`;
+}
+
+function perfectRangeNumbers(a,b){
+    let res = '';
+    let from = a,
+        to = b;
     
-//     if(a > b){
-//         from = b;
-//         to = a;
-//     }
-//     for(let i = from;i<=to; i++){
-//         res += i;
-//         for (let i = 1; i < res; i++) {
-//             if (res % i == 0 ) {
-//                 divis += i;
-//                 if(res === divis){
-//                     perNum += divis + ' ';
-//                 }
-//             }
-            
-//         }
-//     }
-//     return perNum;
-// }
+    if(a > b){
+        from = b;
+        to = a;
+    }
+    for(let i = from;i<=to; i++){
+        if(isPerfectNumber(i)){
+            res += i+' ';
+        }
+    }
+    return res;
+}

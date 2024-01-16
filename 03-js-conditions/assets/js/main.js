@@ -84,27 +84,11 @@ function task3() {
         document.getElementById('resul_t').innerHTML = '<span style="color: red">Введіть число в другий рядок</span>';
         return;
     }
-    // if(num1>100 && num1<-100 && num2>100 && num2<-100){
-    //     document.getElementById('resul_t').innerHTML = '<span style="color: red">Введіть число від -100 до 100</span>';
-    //     return;
-    // }
+    if(num1>100 || num1<-100 || num2>100 || num2<-100){
+        document.getElementById('resul_t').innerHTML = '<span style="color: red">Введіть число від -100 до 100</span>';
+        return;
+    }
     
-    if(100<num1){
-        document.getElementById('resul_t').innerHTML = '<span style="color: red">Введіть число від -100 до 100</span>';
-        return;
-    }
-    if(100<num2){
-        document.getElementById('resul_t').innerHTML = '<span style="color: red">Введіть число від -100 до 100</span>';
-        return;
-    }
-    if(-100>num1){
-        document.getElementById('resul_t').innerHTML = '<span style="color: red">Введіть число від -100 до 100</span>';
-        return;
-    }
-    if(-100>num2){
-        document.getElementById('resul_t').innerHTML = '<span style="color: red">Введіть число від -100 до 100</span>';
-        return;
-    }
 
     if(num1 > num2){
         from = num2;
