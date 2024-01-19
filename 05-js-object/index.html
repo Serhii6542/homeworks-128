@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card mb-4 mt-4">
+            <h5 class="card-header">Завдання 1</h5>
+            <div class="card-body">
+                <p>Створи об'єкт, що описує автомобіль (виробник, модель, рік випуску, середня швидкість, обсяг паливного баку, середня витрата палива на 100 км., водії), і наступні методи для роботи з цим об'єктом:
+                    1.Метод, який виводить на екран інформацію про автомобіль.
+                    2.Підрахунок необхідного часу та кількості палива для подолання переданої відстані з середньою швидкістю. Враховуй, що через кожні 4 години дороги водієві необхідно робити перерву на 1 годину.</p>
+                    <div id="info-car"></div>
+                    <button type="button" class="btn btn-info" onclick="task1_1()">Показати</button>
+            </div>
+            <div class="card-footer">
+                <input type="number" class="form-control" id="num" placeholder="Введіть дистанцію в км">
+                <br>
+                <button type="button" class="btn btn-info" onclick="task1()">Вивести</button>
+                <br>
+                <div id="rez"></div>
+                <div id="time"></div>
+            </div>
+        </div>
+        <div class="card mb-4 mt-4">
+            <h5 class="card-header">Завдання 2</h5>
+            <div class="card-body">
+                <p>Створити об'єкт, що описує час (години, хвилини, секунди), і такі функції для роботи з цим об'єктом:
+                    Для виведення часу на екран.
+                    Зміни часу на передану кількість секунд.
+                    Зміни часу на передану кількість хвилин.
+                    Зміни часу на передану кількість годин.
+                    Враховуйте, що в останніх 3-х функціях, при зміні однієї частини часу, може змінитися і інша. Наприклад: якщо до часу «20:59:45» додати 30 секунд, то повинно вийти «21:00:15», а не «20:59:75». Також потрібно передбачити можливість того що користувач може передати 150 секунд, або 75 хвилин.</p>
+            </div>
+            <div class="card-footer">
+                <input type="number" class="form-control" id="hour" placeholder="Введіть години">
+                <br>
+                <input type="number" class="form-control" id="minute" placeholder="Введіть хвилини">
+                <br>
+                <input type="number" class="form-control" id="second" placeholder="Введіть секунди">
+                <br>
+                <input type="number" class="form-control" id="timehoues" placeholder="Введіть скільки годин бажаєте додати">
+                <br>
+                <input type="number" class="form-control" id="timeminutes" placeholder="Введіть скільки хвилин бажаєте додати">
+                <br>
+                <input type="number" class="form-control" id="timesecond" placeholder="Введіть скільки секунд бажаєте додати">
+                <br>
+                <button type="button" class="btn btn-info" onclick="task2()">Вивести ваш час разом з доданим часом</button>
+                <br>
+                <div id="reztime"></div>
+            </div>
+        </div>
+        <div class="card mb-4 mt-4">
+            <h5 class="card-header">Завдання 3</h5>
+            <div class="card-body">
+                <p>Створи об'єкт, що описує звичайний дріб. Створи об'єкт, який має методи роботи з дробом:
+                    1.Складання 2-х об'єктів-дробів.
+                    2.Віднімання 2-х об'єктів-дробів.
+                    3.Множення 2-х об'єктів-дробів.
+                    4.Ділення 2-х об'єктів-дробів.
+                    5.Скорочення об'єкта-дробу.</p>
+            </div>
+            <div class="card-footer">
+                <input type="number" class="form-control" id="numerator" placeholder="Введіть чисельник">
+                <br>
+                <input type="number" class="form-control" id="denominator" placeholder="Введіть знаменник">
+                <br>
+                <input type="number" class="form-control" id="numerator_2" placeholder="Введіть чисельник">
+                <br>
+                <input type="number" class="form-control" id="denominator_2" placeholder="Введіть знаменник">
+                <br>
+                <select id="action" class="form-control">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <br>
+                <button type="button" class="btn btn-info" onclick="task3()">Результат</button>
+                <!-- <button type="button" class="btn btn-info" onclick="task3_1()">-</button>
+                <button type="button" class="btn btn-info" onclick="task3_2()">*</button>
+                <button type="button" class="btn btn-info" onclick="task3_3()">/</button> -->
+                <br>
+                <div id="rez_fraction"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
