@@ -8,7 +8,8 @@ var car = {
   Year: 2015,
   "Average speed": 90,
   "Volume fuel tank": 60,
-  "Average fuel consumption": 14
+  "Average fuel consumption": 14,
+  Drivers: ['Mario', 'Rocsolana']
 };
 
 function task1_1() {
@@ -67,6 +68,36 @@ function amountOfFuel(a, b) {
   } else {
     numOil = parseInt(a / 100 * b);
     return numOil;
+  }
+}
+
+function addDrivers() {
+  var name = document.getElementById('name').value;
+
+  if (name === '') {
+    document.getElementById('rezName').innerHTML = "<span style=\"color:red;\">\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u0456\u043C'\u044F \u0432\u043E\u0434\u0456\u044F</span>";
+    return;
+  }
+
+  if (name !== '' && isNaN(name)) {
+    car.Drivers.push(name);
+    task1_1();
+    document.getElementById('rezName').innerHTML = "<span style=\"color:green;\">\u0406\u043C'\u044F \u0432\u043E\u0434\u0456\u044F \u0434\u043E\u0434\u0430\u043D\u043E</span>";
+  }
+}
+
+function checkDrivers() {
+  var check = document.getElementById('check').value;
+
+  if (check === '') {
+    document.getElementById('rezCheck').innerHTML = "<span style=\"color:red;\">\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u0456\u043C'\u044F</span>";
+    return;
+  }
+
+  if (car.Drivers.includes(check)) {
+    document.getElementById('rezCheck').innerHTML = "<span style=\"color:green;\">\u0412\u043E\u0434\u0456\u0439 ".concat(check, " \u0432\u0436\u0435 \u0454 \u0432 \u0441\u043F\u0438\u0441\u043A\u0443</span>");
+  } else {
+    document.getElementById('rezCheck').innerHTML = "<span style=\"color:red;\">\u0412\u043E\u0434\u0456\u0439 ".concat(check, " \u043D\u0435\u043C\u0430\u0454 \u0432 \u0441\u043F\u0438\u0441\u043A\u0443</span>");
   }
 }
 

@@ -5,6 +5,7 @@ const car = {
     "Average speed": 90,
     "Volume fuel tank": 60,
     "Average fuel consumption": 14,
+    Drivers: ['Mario', 'Rocsolana'],
 }
 
 function task1_1(){
@@ -60,6 +61,33 @@ function amountOfFuel(a,b){
     }else {
         numOil = parseInt((a / 100) * b);
         return numOil
+    }
+}
+
+function addDrivers(){
+    const name = document.getElementById('name').value;
+    if(name === ''){
+        document.getElementById('rezName').innerHTML = `<span style="color:red;">Введіть ім'я водія</span>`;
+        return;
+    }
+    if(name !== '' && isNaN(name)){
+        car.Drivers.push(name);
+        task1_1();
+        document.getElementById('rezName').innerHTML = `<span style="color:green;">Ім'я водія додано</span>`;
+    }
+    
+}
+
+function checkDrivers(){
+    const check = document.getElementById('check').value;
+    if(check === ''){
+        document.getElementById('rezCheck').innerHTML = `<span style="color:red;">Введіть ім'я</span>`;
+        return;
+    }
+    if(car.Drivers.includes(check)){
+        document.getElementById('rezCheck').innerHTML = `<span style="color:green;">Водій ${check} вже є в списку</span>`;
+    }else{
+        document.getElementById('rezCheck').innerHTML = `<span style="color:red;">Водій ${check} немає в списку</span>`;
     }
 }
 
