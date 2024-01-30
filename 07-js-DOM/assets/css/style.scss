@@ -4,9 +4,9 @@
     box-sizing: border-box;
 }
 
-ol, ul {
-    list-style: none;
-}
+// ol, ul {
+//     list-style: none;
+// }
 
 img {
     vertical-align: top;
@@ -47,4 +47,17 @@ header {
 }
 main {
     flex-grow: 1;
+}
+
+.list-group {
+    margin-top: 50px;
+    padding-left: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
