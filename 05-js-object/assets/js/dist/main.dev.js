@@ -207,52 +207,104 @@ var addZero = function addZero(n) {
   return n < 10 ? '0' + n : '' + n;
 };
 
-var fraction1 = {
+var fraction = {
   numerator1: 0,
-  denominator1: 0
-};
-var fraction2 = {
+  denominator1: 0,
   numerator2: 0,
   denominator2: 0
 };
+var calculation = {
+  add: function add(a, b, c, d) {
+    var rezNumer = 0;
+    var rezDenom = 0;
+    rezNumer = a * d + b * c;
+    rezDenom = b * d;
+    return {
+      numer: rezNumer,
+      denom: rezDenom
+    };
+  },
+  subtract: function subtract(a, b, c, d) {
+    var rezNumer = 0;
+    var rezDenom = 0;
+    rezNumer = a * d - b * c;
+    rezDenom = b * d;
+    return {
+      numer: rezNumer,
+      denom: rezDenom
+    };
+  },
+  multiply: function multiply(a, b, c, d) {
+    var rezNumer = 0;
+    var rezDenom = 0;
+    rezNumer = a * c;
+    rezDenom = b * d;
+    return {
+      numer: rezNumer,
+      denom: rezDenom
+    };
+  },
+  divide: function divide(a, b, c, d) {
+    var rezNumer = 0;
+    var rezDenom = 0;
+    rezNumer = a * d;
+    rezDenom = b * c;
+    return {
+      numer: rezNumer,
+      denom: rezDenom
+    };
+  },
+  commonDivisor: function commonDivisor(a, b) {
+    var min = a < b ? a : b;
+    var divis = 0;
+
+    for (var i = 1; i <= min; i++) {
+      if (a % i === 0 && b % i === 0) {
+        divis = i;
+      }
+    }
+
+    return divis;
+  }
+};
 
 function task3() {
-  fraction1.numerator1 = document.getElementById('numerator').valueAsNumber;
-  fraction1.denominator1 = document.getElementById('denominator').valueAsNumber;
-  fraction2.numerator2 = document.getElementById('numerator_2').valueAsNumber;
-  fraction2.denominator2 = document.getElementById('denominator_2').valueAsNumber;
+  fraction.numerator1 = document.getElementById('numerator').valueAsNumber;
+  fraction.denominator1 = document.getElementById('denominator').valueAsNumber;
+  fraction.numerator2 = document.getElementById('numerator_2').valueAsNumber;
+  fraction.denominator2 = document.getElementById('denominator_2').valueAsNumber;
   var action = document.getElementById('action').value;
   var rezFraction = 0;
   var divis = 0;
   var rezNumerDivis = 0;
   var rezDenomDivis = 0;
 
-  if (isNaN(fraction1.numerator1) || isNaN(fraction1.denominator1) || isNaN(fraction2.numerator2) || isNaN(fraction2.denominator2)) {
+  if (isNaN(fraction.numerator1) || isNaN(fraction.denominator1) || isNaN(fraction.numerator2) || isNaN(fraction.denominator2)) {
     document.getElementById('rez_fraction').innerHTML = '<span style="color: red;">Ви ввели не коректні данні</span>';
     return;
-  } else if (fraction1.denominator1 <= 0 || fraction2.denominator2 <= 0) {
+  } else if (fraction.denominator1 <= 0 || fraction.denominator2 <= 0) {
     document.getElementById('rez_fraction').innerHTML = '<span style="color: red;">Введіть знаменник більше нуля</span>';
     return;
-  } else if (fraction1.numerator1 === 0 || fraction2.numerator2 === 0) {
+  } else if (fraction.numerator1 === 0 || fraction.numerator2 === 0) {
     document.getElementById('rez_fraction').innerHTML = '<span style="color: red;">Введіть чисельник більший або менший нуля</span>';
     return;
   }
 
   switch (action) {
     case '+':
-      rezFraction = add(fraction1.numerator1, fraction1.denominator1, fraction2.numerator2, fraction2.denominator2);
+      rezFraction = calculation.add(fraction.numerator1, fraction.denominator1, fraction.numerator2, fraction.denominator2);
       break;
 
     case '-':
-      rezFraction = subtract(fraction1.numerator1, fraction1.denominator1, fraction2.numerator2, fraction2.denominator2);
+      rezFraction = calculation.subtract(fraction.numerator1, fraction.denominator1, fraction.numerator2, fraction.denominator2);
       break;
 
     case '*':
-      rezFraction = multiply(fraction1.numerator1, fraction1.denominator1, fraction2.numerator2, fraction2.denominator2);
+      rezFraction = calculation.multiply(fraction.numerator1, fraction.denominator1, fraction.numerator2, fraction.denominator2);
       break;
 
     case '/':
-      rezFraction = divide(fraction1.numerator1, fraction1.denominator1, fraction2.numerator2, fraction2.denominator2);
+      rezFraction = calculation.divide(fraction.numerator1, fraction.denominator1, fraction.numerator2, fraction.denominator2);
       break;
 
     default:
@@ -260,7 +312,7 @@ function task3() {
       return;
   }
 
-  divis = commonDivisor(rezFraction.numer, rezFraction.denom);
+  divis = calculation.commonDivisor(rezFraction.numer, rezFraction.denom);
 
   if (divis === 0) {
     divis = 1;
@@ -275,61 +327,4 @@ function task3() {
   }
 
   document.getElementById('rez_fraction').innerText = "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 = ".concat(rezNumerDivis, "/").concat(rezDenomDivis);
-}
-
-function add(a, b, c, d) {
-  var rezNumer = 0;
-  var rezDenom = 0;
-  rezNumer = a * d + b * c;
-  rezDenom = b * d;
-  return {
-    numer: rezNumer,
-    denom: rezDenom
-  };
-}
-
-function subtract(a, b, c, d) {
-  var rezNumer = 0;
-  var rezDenom = 0;
-  rezNumer = a * d - b * c;
-  rezDenom = b * d;
-  return {
-    numer: rezNumer,
-    denom: rezDenom
-  };
-}
-
-function multiply(a, b, c, d) {
-  var rezNumer = 0;
-  var rezDenom = 0;
-  rezNumer = a * c;
-  rezDenom = b * d;
-  return {
-    numer: rezNumer,
-    denom: rezDenom
-  };
-}
-
-function divide(a, b, c, d) {
-  var rezNumer = 0;
-  var rezDenom = 0;
-  rezNumer = a * d;
-  rezDenom = b * c;
-  return {
-    numer: rezNumer,
-    denom: rezDenom
-  };
-}
-
-function commonDivisor(a, b) {
-  var min = a < b ? a : b;
-  var divis = 0;
-
-  for (var i = 1; i <= min; i++) {
-    if (a % i === 0 && b % i === 0) {
-      divis = i;
-    }
-  }
-
-  return divis;
 }

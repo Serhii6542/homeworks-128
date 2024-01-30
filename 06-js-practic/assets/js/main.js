@@ -1,9 +1,30 @@
 const CART =[
-    
+    {
+        title: 'Milk',
+        isBuy: true,
+        qty: 3,
+        price: 36.50
+    },
+    {
+        title: 'Beer',
+        isBuy: false,
+        qty: 1,
+        price: 23.20
+    },
+    {
+        title: 'Bread',
+        isBuy: false,
+        qty: 10,
+        price: 14.50
+    }
 ]
 
 let editMode = false;
 let editId = null;
+
+// const sorted = CART.toSorted((a,b) => {
+//     return (a.qty * a.price) - (b.qty * b.price)
+// })
 
 productList()
 
@@ -68,10 +89,13 @@ function addToCart(){
 
 function productList(){
     let tbody = '';
+    sortList();
     CART.forEach((prod,index)=>{
+        const badge = prod.isBuy ? '<span class="badge rounded-pill text-bg-success">Yes</span>' : '<span class="badge rounded-pill text-bg-danger">No</span>'
         tbody += `<tr>
             <td>${index + 1}</td>
             <td>${prod.title}</td>
+            <td>${badge}</td>
             <td>
                 <div class="input-group mb-3">
                     <button class="btn btn-outline-secondary" type="button" onclick="changeQty(${index},'dec')">-</button>
@@ -81,9 +105,14 @@ function productList(){
             </td>
             <td>${prod.price.toFixed(2)}</td>
             <td>${(prod.qty * prod.price).toFixed(2)}</td>
-            <td>
-                <button type="button" class="btn btn-info btn-sm" onclick="editProd(${index})">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm" onclick="deleteProd(${index}, '${prod.title}')">Remove</button>
+            <td>`
+            if(!prod.isBuy){
+                tbody += `
+                    <button type="button" class="btn btn-info btn-sm" onclick="editProd(${index})">Edit</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="buyProd(${index}, '${prod.title}')">Buy</button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="deleteProd(${index}, '${prod.title}')">Remove</button>`
+            }
+            tbody +=`
             </td>
         </tr>`
     })
@@ -91,6 +120,15 @@ function productList(){
     const disc = calcDisc()
     _el('cart_total').innerHTML = (sumProduct() - disc).toFixed(2);
     _el('cart_disc').innerHTML = disc.toFixed(2);
+}
+
+function buyProd(index, title){
+    if(confirm(`Do you want to buy ${title}?`)){
+        CART[index].isBuy = true;
+        productList()
+        toast.success('Product bought')
+    }
+    
 }
 
 function editProd(index){
@@ -119,6 +157,7 @@ function sumProduct(){
 
 function changeQty(index, action){
     let qtyFirst = CART[index].qty;
+    CART[index].isBuy = false;
     if(action === 'inc'){
         CART[index].qty++;
     } else if(action === 'dec'){
@@ -152,4 +191,39 @@ function calcDisc(){
         return amount;
     }
     return 0;
+}
+
+function sortList(){
+    const sort = _el('sorting').value;
+    // let sortFn = ()=>{};
+    // // console.log([el])
+    // if(sort === 'subTotalAsc'){
+    //     sortFn = (a,b) => {
+    //         return (a.qty * a.price) - (b.qty * b.price);
+    //     }
+    // }
+    // if(sort === 'subTotalDesc'){
+    //     sortFn = (a,b) => {
+    //         return (b.qty * b.price) - (a.qty * a.price); 
+    //     }
+    // }
+    // return CART.toSorted((a,b) => sortFn(a,b))
+    const sortFn = {
+        subTotalAsc: (a,b) => {
+            return (a.qty * a.price) - (b.qty * b.price);
+        },
+        subTotalDesc: (a,b) => {
+            return (b.qty * b.price) - (a.qty * a.price); 
+        },
+        qtyAsc: (a,b) => {
+            return a.qty - b.qty;
+        },
+        qtyDesc: (a,b) => {
+            return b.qty - a.qty;
+        },
+        title: (a,b) => {
+            return a.title > b.title ? 1 : a.title < b.title ? -1 : 0;
+        }
+    }
+    CART.sort((a,b) => sortFn[sort](a,b))
 }
