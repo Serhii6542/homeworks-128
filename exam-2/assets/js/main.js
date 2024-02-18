@@ -4,7 +4,7 @@ $(function(){
         loop:true,
         slideMargin:0,
         controls: false,
-        // auto:true,
+        auto:true,
         vertical:true,
         verticalHeight: 800,
     })
