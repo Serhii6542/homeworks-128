@@ -51,6 +51,22 @@ $(function(){
             loop:true,
             slideMargin: 30,
             controls: false,
+            responsive : [
+                {
+                    breakpoint:1300,
+                    settings: {
+                        item:2,
+                        slideMargin: 15,
+                    }
+                },
+                {
+                    breakpoint:770,
+                    settings: {
+                        item:1,
+                        slideMargin: 15,
+                    }
+                },
+            ]
         })
         $("#prev").on('click', function(){
             mySlider.goToPrevSlide()
@@ -62,7 +78,7 @@ $(function(){
 
 
     lightGallery(document.getElementById('animated-thumbnails'), {
-        plugins: [lgZoom,],
+        plugins: [lgZoom],
         licenseKey: '0000-0000-000-0000',
         speed: 500,
         preload:1,
@@ -92,7 +108,7 @@ window.addEventListener('scroll', function(){
             header.classList.remove('scroll')
         }
     }
-    if(window.scrollY >= 750){
+    if(window.scrollY >= 150){
         if(!header.classList.contains('bacgraund')){
             header.classList.add('bacgraund')
         }
@@ -115,7 +131,7 @@ linkMap.addEventListener('click', function(event){
 
     const icon = L.icon({
         iconUrl: 'assets/img/Pin.svg',
-        iconSize:     [106, 106],
+        iconSize:[106, 106],
     });
 
     L.marker([48.5694381370961, 24.60894190889608], {icon: icon}).addTo(map);
