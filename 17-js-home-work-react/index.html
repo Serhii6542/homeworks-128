@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        function MyApp() {
+            return <>
+                <Header />
+                <Main/>
+            </>
+        }
+
+        function Header(){
+            return <header className="header">
+                    <div className="container">
+                        <div className="logo"></div>
+                        <div className="name-header">
+                            Blog name    
+                        </div>
+                        <div className="icon-header">
+                            <ul className="list-icon">
+                                <Li/>
+                                <Li/>
+                                <Li/>
+                                <Li/>
+                                <Li/>
+                            </ul>    
+                        </div>
+                    </div>    
+                </header>
+        }
+
+        function Li(){
+            return <li className="icon"></li>
+        }
+
+        function Main(){
+            return <main>
+                    <div className="container">
+                        <Baner/>
+                        <div className="wrap-content">
+                            <Blog/>
+                            <News/>
+                        </div>
+                    </div>
+                </main>
+        }
+
+        function Baner(){
+            return <div className="baner">Baner</div>
+        }
+
+        function Blog(){
+            return <div className="blog">
+                <div className="title-blog">Blog</div>
+                <ul className="blog-list">
+                    <Content/>
+                    <Content/>
+                    <Content/>
+                    <Content/>
+                </ul>    
+            </div>
+        }
+
+        function News(){
+            return <div className="news">
+                    <div className="title-list">News</div>
+                    <ul className="news-list">
+                        <Content/>
+                        <Content/>
+                        <Content/>
+                    </ul>
+                </div>
+        }
+
+        function Content(){
+            return <li className="el-blog news-el"></li>
+        }
+
+
+
+
+
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+</html>

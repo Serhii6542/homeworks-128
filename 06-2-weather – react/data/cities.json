@@ -1,0 +1,79 @@
+[
+    {
+        "width":"w50",
+        "name":"Lisbon",
+        "color":"blue",
+        "temp": 21,
+        "icon": "day-sunny"
+    },
+    {
+        "width":"",
+        "name":"Paris",
+        "color":"cyan",
+        "temp": 11,
+        "icon": "night-sleet"
+    },
+    {
+        "width":"",
+        "name":"Belgrade",
+        "color":"violet",
+        "temp": 15,
+        "icon": "day-cloudy"
+    },
+    {
+        "width":"",
+        "name":"Venice",
+        "color":"red",
+        "temp": 21,
+        "icon": "day-cloudy-high"
+    },
+    {
+        "width":"",
+        "name":"Tel-Avive",
+        "color":"orange",
+        "temp": 32,
+        "icon": "hot"
+    },
+    {
+        "width":"",
+        "name":"Cair",
+        "color":"yellow",
+        "temp": 21,
+        "icon": "day-sunny"
+    },
+    {
+        "width":"",
+        "name":"New-York",
+        "color":"lightgreen",
+        "temp": 17,
+        "icon": "day-sleet-storm"
+    },
+    {
+        "width":"",
+        "name":"New-Delhi",
+        "color":"gray",
+        "temp": 17,
+        "icon": "rain-wind"
+    },
+    {
+        "width":"w50",
+        "name":"San-Francisco",
+        "color":"pink",
+        "temp": 15,
+        "icon": "day-sunny-overcast"
+    },
+    {
+        "width":"",
+        "name":"Tokyo",
+        "color":"green",
+        "temp": 8,
+        "icon": "night-clear"
+    },
+    {
+        "width":"w100",
+        "name":"Sydney",
+        "color":"darkviolet",
+        "temp": 25,
+        "icon": "night-partly-cloudy"
+    }
+]

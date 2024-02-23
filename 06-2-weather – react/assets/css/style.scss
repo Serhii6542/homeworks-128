@@ -1,0 +1,116 @@
+$bg:#39C;
+$border:#2B81AC;
+
+@import 'weather-icons.min.css';
+
+@font-face {
+    font-family: 'Lucida';
+    src: url('../font/Lucida\ Sans\ Unicode\ Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Lucida, serif;
+    background-color: $bg;
+    border: 25px solid $border;
+    min-height: 100vh;
+    color: #fff;
+    font-size: 1rem;
+}
+
+main {
+    padding-top: 41px;
+    padding-bottom: 94px;
+}
+
+.container {
+    width: min(90%, 1170px);
+    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 37px;
+    font-size: 1.3125rem;
+    font-weight: 400;
+}
+.list {
+    margin-bottom: 35px;
+    padding: 2px;
+    background-color: #fff;
+    list-style: none;
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    &:hover li:not(:hover) {
+        opacity: 0.7;
+    }
+    li {
+        // width: 25%;
+        padding: 2px;
+        transition: all 0.2s ease;
+        .city {
+            background-color: tomato;
+            text-align: center;
+            padding: 24px 0 25px;
+            font-size: 1.375rem;
+            &.blue {
+                background-color: #39C;
+            }
+            &.cyan {
+                background-color: #3CC;
+            }
+            &.violet {
+                background-color: #969;
+            }
+            &.red {
+                background-color: #C24747;
+            }
+            &.orange {
+                background-color: #E2674A;
+            }
+            &.yellow {
+                background-color: #FC6;
+            }
+            &.lightgreen {
+                background-color: #9C9;
+            }
+            &.gray {
+                background-color: #699;
+            }
+            &.pink {
+                background-color: #C69;
+            }
+            &.green {
+                background-color: #396;
+            }
+            &.darkviolet {
+                background-color: #669;
+            }
+            .title {
+                margin-bottom: 4px;
+            }
+            .temp-icon {
+                color: rgba(255, 255, 255, 0.70);
+            }
+            .wi {
+                font-size: 2.625rem;
+                vertical-align: middle;
+                margin-left: 11px;
+            }
+        }
+        &.w50 {
+            // width: 50%;
+            grid-column: span 2;
+        }
+        &.w100 {
+            // width: 100%;
+            grid-column: span 4;
+        }
+    }
+}
+
